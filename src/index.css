@@ -1,0 +1,6 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+body {
+  background: hsl(220, 25%, 99%);
+  font-family: 'Roboto', sans-serif;
+}
