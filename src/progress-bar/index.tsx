@@ -3,12 +3,25 @@ import styled from 'styled-components';
 
 interface ProgressBarProps {
   progress: number;
+
+  label?: string;
   width?: number;
 };
 
-export function ProgressBar({ progress, width = 300 }: ProgressBarProps): ReactElement {
+export function ProgressBar({
+  progress,
+  label = 'Progress Bar',
+  width = 300
+}: ProgressBarProps): ReactElement {
   return (
-    <Container width={ width }>
+    <Container
+      aria-label={ label }
+      aria-valuemax={ 100 }
+      aria-valuemin={ 0 }
+      aria-valuenow={ progress }
+      role="progressbar"
+      width={ width }
+    >
       <Text data-testid="progress-bar-text">
         { progress }%
       </Text>

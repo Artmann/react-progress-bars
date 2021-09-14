@@ -3,10 +3,16 @@ import styled from 'styled-components';
 
 interface CircularProgressBarProps {
   progress: number;
+
+  label?: string;
   width?: number;
 };
 
-export function CircularProgressBar({ progress, width = 300 }: CircularProgressBarProps): ReactElement {
+export function CircularProgressBar({
+  progress,
+  label = 'Progress Bar',
+  width = 300
+}: CircularProgressBarProps): ReactElement {
   const strokeWidth = 6;
   const radius = (100 / 2) - (strokeWidth * 2);
   const circumference = radius * 2 * Math.PI;
@@ -15,7 +21,12 @@ export function CircularProgressBar({ progress, width = 300 }: CircularProgressB
   return (
     <Container>
       <svg
+        aria-label={ label }
+        aria-valuemax={ 100 }
+        aria-valuemin={ 0 }
+        aria-valuenow={ progress }
         height={ width }
+        role="progressbar"
         width={ width }
         viewBox="0 0 100 100"
         version="1.1"
