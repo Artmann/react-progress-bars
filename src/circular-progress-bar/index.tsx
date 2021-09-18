@@ -16,7 +16,7 @@ export function CircularProgressBar({
   const strokeWidth = 6;
   const radius = (100 / 2) - (strokeWidth * 2);
   const circumference = radius * 2 * Math.PI;
-  const offeset = circumference - progress / 100 * circumference;
+  const offset = circumference - progress / 100 * circumference;
 
   return (
     <Container>
@@ -46,14 +46,16 @@ export function CircularProgressBar({
           data-testid="progress-bar-bar"
           r={ radius }
           strokeDasharray={ `${ circumference } ${ circumference }` }
-          strokeDashoffset={ offeset }
+          strokeDashoffset={ offset }
           strokeWidth={ strokeWidth }
         />
 
       </svg>
+
       <Text data-testid="progress-bar-text">
         { progress }
       </Text>
+
     </Container>
   );
 }
