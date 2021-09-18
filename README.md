@@ -2,6 +2,9 @@
 
 ![Screenshot](./assets/screenshot.png)
 
+Read about how the create these progress bars at:
+https://www.buildingthingswithjavascript.com/articles/building-two-different-types-of-progress-bars
+
 ## Available Scripts
 
 In the project directory, you can run:
